@@ -1,0 +1,60 @@
+<aura:component description="BrandingTile" implements="forceCommunity:availableForAllPageTypes"  access="global">
+
+    <aura:attribute name="canFlip" type="Boolean" default="true"/>
+    <aura:attribute name="backgroundcolor" type="String" />
+    <aura:attribute name="borderradius" type="String" />
+    <aura:attribute name="textcolor" type="String" />
+    <aura:attribute name="textalign" type="String" default="center"/>
+    <aura:attribute name="containerheight" type="String" default="400px"/>
+    <aura:attribute name="containerwidth" type="String" default="100%" />
+
+    <aura:attribute name="fronttitle" type="String" />
+    <aura:attribute name="frontcontent" type="String" />
+    <aura:attribute name="frontimage" type="String" />
+    <aura:attribute name="frontimageheight" type="String" />
+
+    <aura:attribute name="backtitle" type="String" />
+    <aura:attribute name="backcontent" type="String" />
+    <aura:attribute name="backimage" type="String" />
+    <aura:attribute name="backimageheight" type="String" />
+
+    <aura:attribute name="buttontext" type="String" />
+    <aura:attribute name="buttonurl" type="String" />
+    <aura:attribute name="buttontextcolor" type="String" />
+    <aura:attribute name="buttonbackgroundcolor" type="String" />
+    <style>
+        .branding-tile-container .branding-tile-content{
+            color : {!v.textcolor};
+            text-align: {!v.textalign};
+        }
+    </style>
+
+    <div aura:id="bTileContainer" style="{!'width:'+v.containerwidth+'; height:'+v.containerheight+';'}" class="branding-tile-container" onclick="{!v.canFlip ? c.flipMe : null}">
+        <div class="branding-tile-content">
+            <div class="tile-image" style="{!'background: url(' + v.frontimage + ') no-repeat; height: ' + v.frontimageheight + ';'}"></div>
+            <div class="tile-title">
+                {!v.fronttitle}
+            </div>
+            <div class="tile-content">
+                {!v.frontcontent}
+            </div>
+            <aura:if isTrue="{!v.buttontext != null}">
+                <div class="tile-button">
+                    <button style="{! 'color: ' + v.buttontextcolor + '; background : ' + v.buttonbackgroundcolor + ';'}" class="slds-button_neutral slds-button" onclick="{!c.goToURL}">{!v.buttontext}</button>
+                </div>
+            </aura:if>
+        </div>
+        <div class="branding-tile-content reverse">
+            <div class="tile-image" style="{!'background: ' + v.backimage + '; height: ' + v.backimageheight + ';'}"></div>
+            <div class="tile-title">
+                {!v.backtitle}
+            </div>
+            <div class="tile-content">
+                {!v.backcontent}
+            </div>
+        </div>
+        <div class="branding-tile" style="{!'background-color :'+v.backgroundcolor + '; border-radius:'+v.borderradius+';'}" >
+        </div>
+    </div>
+
+</aura:component>

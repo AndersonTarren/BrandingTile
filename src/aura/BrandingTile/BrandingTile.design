@@ -1,0 +1,24 @@
+<design:component >
+    <design:attribute name="canFlip" label="Allow Flip" default="true" />
+    <design:attribute name="containerheight" label="Height" default="400px" />
+    <design:attribute name="containerwidth" label="Width" default="100%" />
+    <design:attribute name="textcolor" label="Text Color" />
+    <design:attribute name="borderradius" label="Border Radius" />
+    <design:attribute name="backgroundcolor" label="Background Color" />
+
+    <design:attribute name="textalign" label="Text Align" dataSource="left, center, right" default="center" />
+    <design:attribute name="fronttitle" label="Front Title" />
+    <design:attribute name="frontcontent" label="Front Content" />
+    <design:attribute name="frontimage" label="Front Image URL (optional)" />
+    <design:attribute name="frontimageheight" label="Front Image Height (optional)" />
+
+    <design:attribute name="backtitle" label="Back Title (optional)" />
+    <design:attribute name="backcontent" label="Back Content (optional)" />
+    <design:attribute name="backimage" label="Back Image URL (optional)" />
+    <design:attribute name="backimageheight" label="Back Image Height (optional)" />
+
+    <design:attribute name="buttontext" label="Button Text" />
+    <design:attribute name="buttonurl" label="Button URL" description="Use a leading to navigation to a community page like support" />
+    <design:attribute name="buttontextcolor" label="Button Text Color" />
+    <design:attribute name="buttonbackgroundcolor" label="Button Background Color" />
+</design:component>
